@@ -78,6 +78,16 @@ resources:
                  - 'ErrorRateLambdaFunction'
                  - 'Arn'
 
+    LambdaErrorRateSnsPermission:
+      Type: AWS::Lambda::Permission
+      Properties:
+        FunctionName:
+          Ref: ErrorRateLambdaFunction
+        Action: lambda:InvokeFunction
+        Principal: 'sns.amazonaws.com'
+        SourceArn:
+          Ref: LambdaErrorSnsTopic
+
   Outputs:
     LambdaErrorRateSecurityGroup:
       Value:
