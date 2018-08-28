@@ -9,3 +9,6 @@ bin
 
 # golang vendor (dependencies) directory
 vendor
+
+# VS Code files
+.vscode
